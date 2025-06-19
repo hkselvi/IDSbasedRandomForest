@@ -47,3 +47,14 @@ y_pred = rf.predict(X_test)
 from sklearn.metrics import classification_report, confusion_matrix
 print(classification_report(y_test, y_pred))
 print(confusion_matrix(y_test, y_pred))
+
+# Compute confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+
+# Plot confusion matrix using seaborn heatmap
+plt.figure(figsize=(8,6))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix')
+plt.show()
